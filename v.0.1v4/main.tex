@@ -1,0 +1,80 @@
+%% ----------------------------------------------------------------
+%% main.tex -- MAIN FILE (the one that you compile with LaTeX)
+%% ----------------------------------------------------------------
+
+\documentclass[a4paper, 12pt, oneside]{tesisutec}
+
+% Location of the graphics files (set up for graphics to be in PDF format)
+\graphicspath{images/}
+
+% Include any extra LaTeX packages required
+\usepackage[square, numbers, comma, sort&compress]{natbib}
+\usepackage{verbatim}  %
+\hypersetup{urlcolor=blue, colorlinks=true}
+
+%
+\usepackage{notoccite}  % Librería necesaria para arreglar el orden de referencias en overleaf.com
+\usepackage{hyperref} % Librería para hacer 'clickable' todas las referencias. OPCIONAL.
+
+% For Spanish
+\usepackage[utf8]{inputenc}
+
+%% ============================================================================
+\begin{document}
+
+\frontmatter
+\department{Ingeniería Electrónica}
+\degree{Ingeniero Electrónico}
+\title {TÍTULO DEL TRABAJO}
+\author{Nombres y apellidos del alumno}
+\authorid{200143}
+\supervisor{Nombres y apellidos de asesor}
+\date{Julio 2020}
+
+\maketitle
+\setstretch{1.5}
+
+\input{encabezados/aprobacion}
+\input{encabezados/dedicatoria}
+\input{encabezados/agradecimientos}
+
+\tableofcontents
+\newpage
+\listoftables
+\newpage
+\listoffigures
+
+\addtocontents{toc}{\vspace{1.5em}}
+
+%% ============================================================================
+\mainmatter
+\pagestyle{fancy}
+
+\input{secciones/resumen}
+\input{secciones/abstract} % Nuevo: resumen en inglés
+\input{secciones/capitulo1}
+\input{secciones/capitulo2}
+\input{secciones/capitulo3}
+\input{secciones/capitulo4}
+\input{secciones/conclusiones}
+\input{secciones/recomendaciones} % sección opcional
+
+%% ============================================================================
+% \appendix
+% \input{secciones/apendiceA}
+% \addtocontents{toc}{\vspace{2em}}
+% \backmatter
+
+%% ============================================================================
+\renewcommand{\bibname}{\large\bf{REFERENCIAS BIBLIOGR\'AFICAS}}
+\bibliographystyle{IEEEtran} % Use the IEEEtran style
+\bibliography{referencias}   % The references are in "referencias.bib"
+
+\end{document}
+%% ----------------------------------------------------------------
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
